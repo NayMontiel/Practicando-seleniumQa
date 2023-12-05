@@ -1,0 +1,80 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+// Define las versiones en una sección 'ext'
+ext {
+    allureVersion = '2.20.1'
+    aspectjVersion = '1.9.7'
+}
+
+allure {
+    adapter.autoconfigure = true
+    version allureVersion
+
+    useJUnit5 {
+        version = '2.20.1'
+    }
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+// Define las configuraciones necesarias
+configurations {
+    aspectpath
+    ajc
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.15.0'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.6.2'
+
+    testImplementation platform("io.qameta.allure:allure-bom:$allureVersion")
+    testImplementation "io.qameta.allure:allure-junit5:$allureVersion"
+    implementation group: 'io.qameta.allure', name: 'allure-assertj', version: '2.24.0'
+
+    // Agrega la dependencia de AspectJ
+    ajc "org.aspectj:aspectjtools:$aspectjVersion"
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjtools
+    implementation group: 'org.aspectj', name: 'aspectjtools', version: '1.9.21.M1'
+
+}
+
+tasks.register('weaveAspects', JavaExec) {
+    classpath = configurations.testCompileClasspath
+    mainClass = 'org.aspectj.tools.ajc.Main'
+    args = [
+            '-classpath', classpath.asPath,
+            '-inpath', sourceSets.test.output.classesDirs.getAsPath(),
+            '-d', sourceSets.test.output.classesDirs.iterator().next(),
+            '-aspectpath', configurations.aspectpath.asPath,
+            '-verbose', '-showWeaveInfo'
+    ]
+}
+compileTestJava.dependsOn weaveAspects
+
+test {
+    useJUnitPlatform()
+
+    // Incluye el tejido de AspectJ durante la compilación de pruebas
+    doLast {
+        ant {
+            taskdef(resource: "org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties",
+                    classpath: configurations.ajc.asPath)
+            ajc(classpath: configurations.compileClasspath.asPath,
+                    fork: true,
+                    aspectPath: configurations.aspectpath.asPath,
+                    sourceRootCopyFilter: "+ **/allure/**/*.class")
+        }
+    }
+}
