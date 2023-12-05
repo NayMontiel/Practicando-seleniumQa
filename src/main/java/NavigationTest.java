@@ -37,9 +37,7 @@ public class NavigationTest extends BaseWebTest {
             System.out.println("El Nombre es: " + result.findElement(nameBy).getText());
             System.out.println("----------");
 
-        }
-
-    }
+        }  }
 
     @Test
     @Description("navegando a mercado libre y probando el input de busqueda condigo más limpio y separado")
