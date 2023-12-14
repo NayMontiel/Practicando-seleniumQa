@@ -4,52 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c3a999b-3da4-488b-a070-6244cf040d5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Util/TestResultLoggerExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Util/TestResultLoggerExtension2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Util/driver/DriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Util/driver/DriverManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pageObjects/AbstractPagesObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/1138d921-0099-4cca-8ae1-ad4ac93bf59c-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/13fa796d-e3f4-47f4-83cf-d0a721e6dfc3-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/14b126e4-3b90-4737-99f3-110c472ef6cb-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/2b787897-7801-494f-a47d-c32067e46d85-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/31db98d3-15d0-4396-aadc-71d41008f8d3-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/356bbedc-8064-48e9-8f79-38cc8361d22a-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/3a1d6ba1-7034-4be5-9f09-99fcb70bef61-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/4531bc0a-f707-44c6-89f1-f73418baa4ba-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/460b9798-03c8-4fcf-93ca-a405ac39189d-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/4cfce8f3-594f-46d4-a33a-c30bd846dd69-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/53898a7d-3fc2-4de4-b135-0b27e4536411-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/76e04d9d-6db0-407f-ab4e-73b7e5d07c15-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/82f1ca96-6922-4ff3-bfed-55854c729276-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/8705f706-35ba-4350-b6b2-0b2ffce0d390-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/8aea8a7f-3bec-474b-b44c-e0414a3622d1-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/9149a313-a804-439b-8b94-6e384ca0748f-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/92e5584f-a9bf-4fd1-abd2-e7f35d8f23f6-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/92e89c19-2b88-44e6-bc2e-6890a133bd96-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/a27cc3f9-5ff5-440a-9caa-457d46c2549b-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/abbe40bc-b9f0-4a37-8bef-76db29d70cc9-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/c11cabf2-681f-41be-8662-246ef1de1efc-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/c2d1a0b7-6389-48f8-b8e9-53414ad32ee4-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/ca045b21-97c0-4187-a076-46c80f7f622e-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/d08992d8-2865-40a8-afd8-2c943e20bd1e-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/d7ad7167-d85b-4ec8-85c9-30ebafeb3331-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/f3ace8c5-1ab6-4aec-aac1-692c4c7e6312-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseWebTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseWebTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NavigationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Photographer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Util/Photographer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ContactUs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/DetailsPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/DetailsPages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/HomePages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/HomePages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ResultModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ResultModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ResultPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ResultPages.java" afterDir="false" />
-    </list>
+    <list default="true" id="4c3a999b-3da4-488b-a070-6244cf040d5b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
