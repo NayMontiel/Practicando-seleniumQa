@@ -1,4 +1,5 @@
 
+import Util.driver.DriverManager;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,14 +17,12 @@ public class NavigationTest extends BaseWebTest {
     @Description("navegando a mercado libre y probando el input de busqueda")
     public void searchToMercadoLibre()  {
 
-        driver.get("https://www.mercadolibre.cl");
-
-       WebElement searchBox =  driver.findElement(By.id("cb1-edit"));
+       WebElement searchBox =  DriverManager.getDriver().findElement(By.id("cb1-edit"));
        searchBox.sendKeys("guitarra electrica");
        searchBox.sendKeys(Keys.ENTER);
 
 
-       List<WebElement> results = driver.findElements(By.cssSelector("ol[class*='ui-search-layout'] li"));
+       List<WebElement> results = DriverManager.getDriver().findElements(By.cssSelector("ol[class*='ui-search-layout'] li"));
 
        System.out.println("El número de resultados es: " + results.size());
 
@@ -43,20 +42,19 @@ public class NavigationTest extends BaseWebTest {
     @Description("navegando a mercado libre y probando el input de busqueda condigo más limpio y separado")
     public void searchToMercadoLibre2()  {
 
-        driver.get("https://www.mercadolibre.cl");
 
         //search
-        HomePages homePages = new HomePages(driver);
+        HomePages homePages = new HomePages();
         homePages.searchFor("Guitarra electrica");
 
         //Result
 
-        ResultPages resultPages = new ResultPages(driver);
+        ResultPages resultPages = new ResultPages();
         ResultModel expectedResult = resultPages.clickOnRandomItem();
 
         //details
 
-        DetailsPages detailsPages = new DetailsPages(driver);
+        DetailsPages detailsPages = new DetailsPages();
         ResultModel actualResultModel = detailsPages.getDetails();
 
         Assertions.assertAll(
@@ -70,20 +68,19 @@ public class NavigationTest extends BaseWebTest {
     @Description("navegando a mercado libre y probando el input de busqueda en este caso con otro articulo")
     public void searchToMercadoLibre3()  {
 
-        driver.get("https://www.mercadolibre.cl");
 
         //search
-        HomePages homePages = new HomePages(driver);
+        HomePages homePages = new HomePages();
         homePages.searchFor("iphone");
 
         //Result
 
-        ResultPages resultPages = new ResultPages(driver);
+        ResultPages resultPages = new ResultPages();
         ResultModel expectedResult = resultPages.clickOnRandomItem();
 
         //details
 
-        DetailsPages detailsPages = new DetailsPages(driver);
+        DetailsPages detailsPages = new DetailsPages();
         ResultModel actualResultModel = detailsPages.getDetails();
 
         Assertions.assertAll(
@@ -92,6 +89,12 @@ public class NavigationTest extends BaseWebTest {
         );
 
     }
+
+    /*@Test
+    @Description("fallando el test")
+    public void fail(){
+        Assertions.assertTrue(false);
+    }*/
 
     }
 

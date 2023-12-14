@@ -1,19 +1,18 @@
 package pageObjects;
 
 import Util.Photographer;
+import Util.driver.DriverManager;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
 
 import java.util.List;
 import java.util.Random;
 
-public class ResultPages {
-    private final WebDriver driver;
+public class ResultPages extends AbstractPagesObjects {
 
     @FindBy(css = "ol[class*='ui-search-layout'] li")
     private List<WebElement> results;
@@ -26,10 +25,8 @@ public class ResultPages {
     private WebElement randomElement;
     private final Photographer photographer;
 
-    public ResultPages(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        photographer = new Photographer(driver);
+    public ResultPages(){
+        photographer = new Photographer();
     }
    @Step("Obteniendo un item aleatorio")
     public WebElement getRandomResults(){
@@ -47,7 +44,7 @@ public class ResultPages {
         expectedResult.setName(randomElement.findElement(expectedName).getText());
         expectedResult.setPrice(randomElement.findElement( expectedPrice).getText());
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", randomElement);
         randomElement.findElement(expectedName).click();
         return expectedResult;

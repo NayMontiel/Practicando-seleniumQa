@@ -1,13 +1,12 @@
 package pageObjects;
 
 import Util.Photographer;
+import Util.driver.DriverManager;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class DetailsPages {
+public class DetailsPages extends AbstractPagesObjects {
 
     @FindBy(css = "div[class*= 'ui-pdp-price__second-line'] span[class= 'andes-money-amount__fraction']")
      private WebElement priceInDetails;
@@ -15,9 +14,9 @@ public class DetailsPages {
      private WebElement nameInDetails;
 
     private Photographer photographer;
-    public DetailsPages(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        photographer = new Photographer(driver);
+    public DetailsPages() {
+
+        photographer = new Photographer();
     }
    @Step("obteniendo Informacion Detallada")
    public ResultModel getDetails() {

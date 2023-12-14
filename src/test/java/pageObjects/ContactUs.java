@@ -1,5 +1,6 @@
 package pageObjects;
 
+import Util.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,10 +32,10 @@ public class ContactUs {
     @FindBy(xpath = "//p[contains(@class, 'alert')]")
     private WebElement alertLocator;
 
-    public ContactUs(WebDriver driver) {
-            this.driver = driver;
-            wait = new WebDriverWait(driver, Duration.ofSeconds(10L));
-            PageFactory.initElements(driver, this);
+    public ContactUs() {
+
+            wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10L));
+
     }
     //select
     public void writeSubjectHeading(String subject){
